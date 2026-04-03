@@ -40,40 +40,42 @@ export const router = createBrowserRouter([
 			{
 				path: "/",
 				element: (
-					<ProtectedRoutes>
+					// <ProtectedRoutes>
 						<Home />
-					</ProtectedRoutes>),
+					// </ProtectedRoutes>
+				),
 
 			},
 			{
 				path: "/products/category/:categoryId",
 				element: (
-					<ProtectedRoutes>
+					// <ProtectedRoutes>
 						<Plp />
-					</ProtectedRoutes>
+					// </ProtectedRoutes>
 				),
 			},
 			{
 				path: "/products/category/:categoryId/:productId",
 				element: (
-					<ProtectedRoutes>
+					// <ProtectedRoutes>
 						<Pdp />
-					</ProtectedRoutes>),
+					// </ProtectedRoutes>
+				),
 			},
 			{
 				path: "/cart",
 				element: (
-					<ProtectedRoutes>
+					// <ProtectedRoutes>
 						<Cart />
-					</ProtectedRoutes>
+					// </ProtectedRoutes>
 				),
 			},
 			{
 				path: "/order-confirmation",
 				element: (
-					<ProtectedRoutes>
+					// <ProtectedRoutes>
 						<Order />
-					</ProtectedRoutes>
+					// </ProtectedRoutes>
 				),
 			},
 			{

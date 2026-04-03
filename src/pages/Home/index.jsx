@@ -33,7 +33,7 @@ export default function Home() {
     // }
   }, [])
 
-  const result = category.map(category => ({
+  const result = category?.map(category => ({
     categoryName: category,
     image: categoryImages[category]
   }));
