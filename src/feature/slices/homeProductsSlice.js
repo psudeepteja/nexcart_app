@@ -2,37 +2,37 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getProductsApi } from "../asyncThunk";
 
 export const homeProductSlice = createSlice({
-    name:"homeProduct",
-    initialState:{
-        menCollections:[],
-        womenCollections:[],
-        jewelery:[],
-        electronics:[],
-        isProductLoading:"idel"
-    },
-    reducers:{},
-    extraReducers:(builder)=>{
-        builder.addCase(getProductsApi.pending, (state, action)=>{
-            state.isProductLoading = "pending"
-        })
-        .addCase(getProductsApi.fulfilled,(state, action)=>{
-          const {arg} = action.meta;
-        const {payload} = action;
-
-        if (arg.includes("men's clothing")) {
+  name: "homeProduct",
+  initialState: {
+    menCollections: [],
+    womenCollections: [],
+    jewelery: [],
+    electronics: [],
+    isProductLoading: "idel"
+  },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(getProductsApi.pending, (state, action) => {
+      state.isProductLoading = "pending"
+    })
+      .addCase(getProductsApi.fulfilled, (state, action) => {
+        const { arg } = action.meta;
+        const categoryType = arg.replace("products/category/", "")
+        const { payload } = action;
+        if (categoryType === "men's clothing") {
           state.menCollections = payload;
-        } else if (arg.includes("women's clothing")) {
+        } else if (categoryType === "women's clothing") {
           state.womenCollections = payload;
-        } else if (arg.includes("jewelery")) {
+        } else if (categoryType === "jewelery") {
           state.jewelery = payload;
-        } else if (arg.includes("electronics")) {
+        } else if (categoryType === "electronics") {
           state.electronics = payload;
         }
-        })
-        .addCase(getProductsApi.rejected, (state, action)=>{
-            state= initialState
-        })
-    }
+      })
+      .addCase(getProductsApi.rejected, (state, action) => {
+        state = initialState
+      })
+  }
 })
 
 export default homeProductSlice.reducer

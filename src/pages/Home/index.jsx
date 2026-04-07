@@ -5,10 +5,10 @@ import { getCategoryApi, getProductsApi } from '../../feature/asyncThunk'
 import Card from '../../components/Card'
 
 const categoryImages = {
-  "electronics": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
-  "jewelery": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
-  "men's clothing": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-  "women's clothing": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg"
+  "electronics": "/electronics.png",
+  "jewelery": "/jewelery.png",
+  "men's clothing": "/men's clothing.png",
+  "women's clothing": "/women's clothing.png"
 };
 
 export default function Home() {
@@ -39,9 +39,9 @@ export default function Home() {
   }));
 
   return (
-    <>
-      <div className=" font-medium border-b-2 border-sky-900 inline-block py-2">Shop from <span className="text-sky-900"> Categories  </span></div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 py-4 gap-4">
+    <div className='pt-2 px-4 md:px-0'>
+      <div className=" font-medium border-b-2 border-focus-purple inline-block py-1 ">Shop from <span className="text-focus-blue font-bold"> Categories  </span></div>
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-6 py-4 gap-4">
         {result.map((i, idx) => (
           <Link key={idx} to={`/products/category/${i.categoryName}`}>
             <Card
@@ -53,8 +53,8 @@ export default function Home() {
         }
 
       </div>
-      <div className=" font-medium border-b-2 border-sky-900 inline-block py-2"><span className="text-sky-900"> Electronics </span> Collections</div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 py-4 gap-4">
+      <div className=" font-medium border-b-2 border-focus-blue inline-block py-1"><span className="text-focus-purple font-bold"> Electronics </span> Collections</div>
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-6 py-4 gap-4">
         {electronics.map((i, idx) => (
           <div key={idx} onClick={() => {
             navigate(`/products/category/${i.category}/${i.id}`,
@@ -68,8 +68,8 @@ export default function Home() {
         ))
         }
       </div>
-      <div className=" font-medium border-b-2 border-sky-900 inline-block py-2"><span className="text-sky-900"> Women </span> Collections</div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 py-4 gap-4">
+      <div className=" font-medium border-b-2 border-focus-blue inline-block py-1"><span className="text-focus-purple font-bold"> Women </span> Collections</div>
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-6 py-4 gap-4">
         {womenCollections.map((i, idx) => (
           <div key={idx} onClick={() => {
             navigate(`/products/category/${i.category}/${i.id}`,
@@ -83,8 +83,8 @@ export default function Home() {
         ))
         }
       </div>
-      <div className=" font-medium border-b-2 border-sky-900 inline-block py-2"><span className="text-sky-900"> Men </span> Collections</div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 py-4 gap-4">
+      <div className=" font-medium border-b-2 border-focus-blue inline-block py-1"><span className="text-focus-purple font-bold"> Men </span> Collections</div>
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-6 py-4 gap-4">
         {menCollections.map((i, idx) => (
           <div key={idx} onClick={() => {
             navigate(`/products/category/${i.category}/${i.id}`,
@@ -98,8 +98,8 @@ export default function Home() {
         ))
         }
       </div>
-      <div className=" font-medium border-b-2 border-sky-900 inline-block py-2"><span className="text-sky-900"> Jewelery </span> Collections</div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 py-4 gap-4">
+      <div className=" font-medium border-b-2 border-focus-blue inline-block py-1"><span className="text-focus-purple font-bold"> Jewelery </span> Collections</div>
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-6 py-4 gap-4">
         {jewelery.map((i, idx) => (
           <div key={idx} onClick={() => {
             navigate(`/products/category/${i.category}/${i.id}`,
@@ -113,6 +113,6 @@ export default function Home() {
         ))
         }
       </div>
-    </>
+    </div>
   )
 }

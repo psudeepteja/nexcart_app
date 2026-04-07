@@ -1,6 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-focus-blue: #0FA3B1;
+  --color-focus-purple: #7B2CBF;
+}
 
 body {
   margin: 0;
@@ -16,6 +19,6 @@ code {
     monospace;
 }
 
-.notistack-Snackbar{
+.notistack-Snackbar {
   top: 40px !important;
 }
