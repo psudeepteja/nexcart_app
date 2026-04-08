@@ -39,10 +39,10 @@ export default function Header() {
                 {userDetails ? (
                   <div>
                     <p>Hello, {userDetails} </p>
-                    <button className='px-4 py-2 bg-sky-900 rounded-lg text-white' onClick={handleLogout}>Logout</button>
+                    <button className='px-4 py-2 bg-focus-purple rounded-lg text-white cursor-pointer' onClick={handleLogout}>Logout</button>
                   </div>
                 ) : (
-                  <button className='px-4 py-2 bg-sky-900 rounded-lg text-white' >Login</button>
+                  <button className='px-4 py-2 bg-focus-purple rounded-lg text-white cursor-pointer' onClick={()=> navigate('/auth')}>Login</button>
                 )
                 }
               </div>
