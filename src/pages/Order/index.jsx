@@ -9,22 +9,23 @@ export default function OrderConfirmation() {
   };
 
   return (
-    <div className='my-4 mx-8'>
-      <div className='bold'>Orders</div>
-      <div className='border p-4'>
+    <div className='my-2 mx-8'>
+      <div className=" font-medium border-b-2 border-focus-blue inline-block py-1 "><span className="text-focus-purple font-bold text-lg"> Orders</span></div>
+
+      <div className='shadow-md p-4 mt-2'>
         <div className='flex justify-between'>
           <div>Order Id #123</div>
-          <div> Total Price: ₹ {calculateTotalPrice().toFixed(2)}</div>
+          <div> Total Price: $ {calculateTotalPrice().toFixed(2)}</div>
         </div>
         <div className='font-bold py-2'>Items</div>
         <div >
           {order.map((item) => (
-            <div key={item.id} className="flex justify-between gap-8 border mb-4 p-4">
+            <div key={item.id} className="flex justify-between gap-8 shadow-md mb-4 p-4">
               <div className='flex gap-4'>
                 <img src={item.image} alt={item.title} className='w-12 h-12' />
                 <div>
                   <div>{item.title}</div>
-                  <div className='font-semibold'> ₹ {item.price}</div>
+                  <div className='font-semibold'> $ {item.price}</div>
                 </div>
               </div>
               <div>{item.quantity} X {item.price} = {item.quantity * item.price} </div>

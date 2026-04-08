@@ -14,8 +14,8 @@ export const homeProductSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getProductsApi.pending, (state, action) => {
       state.isProductLoading = "pending"
-    })
-      .addCase(getProductsApi.fulfilled, (state, action) => {
+    }).addCase(getProductsApi.fulfilled, (state, action) => {
+        state.isProductLoading = "idel"
         const { arg } = action.meta;
         const categoryType = arg.replace("products/category/", "")
         const { payload } = action;
@@ -30,7 +30,7 @@ export const homeProductSlice = createSlice({
         }
       })
       .addCase(getProductsApi.rejected, (state, action) => {
-        state = initialState
+        state.isProductLoading = "idel"
       })
   }
 })

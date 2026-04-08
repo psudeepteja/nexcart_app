@@ -61,7 +61,7 @@ const ProductCard = ({ product, categoryId }) => {
               <div className="font-bold mb-2 truncate max-w-30 md:max-w-60">{title}</div>
             </div>
             <p className="text-gray-700 text-base font-semibold">
-              ₹ {price}
+              $ {price}
             </p>
           </div>
 

@@ -53,7 +53,7 @@ export default function Header() {
           <div >
             <MaterialSymbolsShoppingCart />
           </div>
-          <div className='absolute -top-3.25 right-1.5 font-bold text-focus-purple text-lg'>{cartQty}</div>
+          <div className='absolute -top-3 right-0 font-bold text-focus-purple text-md'>{cartQty}</div>
         </div>
       </div>
     </div>
